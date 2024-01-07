@@ -19,6 +19,7 @@ func (l *linkedList) prepend(n *node) {
 	l.length++
 }
 
+// Print a Node with value specified
 func (l linkedList) printListData() {
 	toPrint := l.head
 	for l.length != 0 {
@@ -28,6 +29,8 @@ func (l linkedList) printListData() {
 	}
 	fmt.Printf("\n")
 }
+
+// Delete a Node with value specified
 func (l *linkedList) deleteWithValue(value int) {
 	if l.length == 0 {
 		return
