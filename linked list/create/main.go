@@ -26,7 +26,6 @@ func (list *LinkedList) Appendlist(data int) {
 	newNode := &Node{data: data, next: nil}
 	if list.head == nil {
 		list.head = newNode
-		return
 	}
 	temp := list.head
 	for temp.next != nil {
@@ -40,6 +39,5 @@ func (list *LinkedList) Displaylist() {
 	for temp != nil {
 		fmt.Println(temp.data)
 		temp = temp.next
-
 	}
 }
