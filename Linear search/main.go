@@ -5,10 +5,10 @@ import "fmt"
 func linearSearch(arr []int, target int) int {
     for i, value := range arr {
         if value == target {
-            return i // Return the index of the target if found
+            return i 
         }
     }
-    return -1 // Return -1 if the target is not found
+    return -1 
 }
 
 func main() {
