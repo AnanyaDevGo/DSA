@@ -1,47 +1,46 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func mergeSort(arr []int) []int {
-	if len(arr) <= 1 {
-		return arr
-	}
+func mergeSort(arr []int) {
+	if len(arr) > 1 {
+		mid := len(arr) / 2
+		left := arr[:mid]
+		right := arr[mid:]
+		mergeSort(left)
+		mergeSort(right)
 
-	mid := len(arr) / 2
-	left := mergeSort(arr[:mid])
-	right := mergeSort(arr[mid:])
+		i, j, k := 0, 0, 0
 
-	return merge(left, right)
-}
+		for i < len(left) && j < len(right) {
+			if left[i] < right[j] {
+				arr[k] = left[i]
+				i++
+			} else {
+				arr[k] = right[j]
+				j++
+			}
+			k++
+		}
 
-func merge(left, right []int) []int {
-	result := make([]int, 0, len(left)+len(right))
-	i, j := 0, 0
-
-	for i < len(left) && j < len(right) {
-		if left[i] <= right[j] {
-			result = append(result, left[i])
+		for i < len(left) {
+			arr[k] = left[i]
 			i++
-		} else {
-			result = append(result, right[j])
+			k++
+		}
+
+		for j < len(right) {
+			arr[k] = right[j]
 			j++
+			k++
 		}
 	}
-
-	result = append(result, left[i:]...)
-	result = append(result, right[j:]...)
-
-	return result
 }
 
 func main() {
-	data := []int{38, 27, 43, 3, 9, 82, 10}
+	arr := []int{38, 27, 43, 3, 9, 82, 10}
+	fmt.Println("Original array:", arr)
 
-	fmt.Println("Unsorted Array:", data)
-
-	sortedArray := mergeSort(data)
-
-	fmt.Println("Sorted Array:", sortedArray)
+	mergeSort(arr)
+	fmt.Println("Sorted array:", arr)
 }
