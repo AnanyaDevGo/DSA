@@ -37,21 +37,21 @@ func search(root *Node, key int) *Node {
 	return search(root.Right, key)
 }
 
-// func findMin(root *Node) *Node {
-// 	current := root
-// 	for current.Left != nil {
-// 		current = current.Left
-// 	}
-// 	return current
-// }
+func findMin(root *Node) *Node {
+	current := root
+	for current.Left != nil {
+		current = current.Left
+	}
+	return current
+}
 
-// func findMax(root *Node) *Node {
-// 	current := root
-// 	for current.Right != nil {
-// 		current = current.Right
-// 	}
-// 	return current
-// }
+func findMax(root *Node) *Node {
+	current := root
+	for current.Right != nil {
+		current = current.Right
+	}
+	return current
+}
 
 // func preorderTraversal(root *Node) {
 // 	if root != nil {
@@ -163,21 +163,21 @@ func main() {
 		fmt.Println("Not found")
 	}
 
-	// fmt.Println("\nMinimum value:")
-	// minNode := findMin(root)
-	// if minNode != nil {
-	// 	fmt.Println(minNode.Key)
-	// } else {
-	// 	fmt.Println("Tree is empty")
-	// }
+	fmt.Println("\nMinimum value:")
+	minNode := findMin(root)
+	if minNode != nil {
+		fmt.Println(minNode.Key)
+	} else {
+		fmt.Println("Tree is empty")
+	}
 
-	// fmt.Println("\nMaximum value:")
-	// maxNode := findMax(root)
-	// if maxNode != nil {
-	// 	fmt.Println(maxNode.Key)
-	// } else {
-	// 	fmt.Println("Tree is empty")
-	// }
+	fmt.Println("\nMaximum value:")
+	maxNode := findMax(root)
+	if maxNode != nil {
+		fmt.Println(maxNode.Key)
+	} else {
+		fmt.Println("Tree is empty")
+	}
 
 	// fmt.Println("\nPre-order traversal:")
 	// preorderTraversal(root)
