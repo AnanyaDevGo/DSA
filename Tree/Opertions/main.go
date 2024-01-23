@@ -53,13 +53,13 @@ func findMax(root *Node) *Node {
 	return current
 }
 
-// func preorderTraversal(root *Node) {
-// 	if root != nil {
-// 		fmt.Printf("%d ", root.Key)
-// 		preorderTraversal(root.Left)
-// 		preorderTraversal(root.Right)
-// 	}
-// }
+func preorderTraversal(root *Node) {
+	if root != nil {
+		fmt.Printf("%d ", root.Key)
+		preorderTraversal(root.Left)
+		preorderTraversal(root.Right)
+	}
+}
 
 // func inorderTraversal(root *Node) {
 // 	if root != nil {
@@ -179,8 +179,8 @@ func main() {
 		fmt.Println("Tree is empty")
 	}
 
-	// fmt.Println("\nPre-order traversal:")
-	// preorderTraversal(root)
+	fmt.Println("\nPre-order traversal:")
+	preorderTraversal(root)
 
 	// fmt.Println("\nPost-order traversal:")
 	// postorderTraversal(root)
