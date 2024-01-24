@@ -61,13 +61,13 @@ func preorderTraversal(root *Node) {
 	}
 }
 
-// func inorderTraversal(root *Node) {
-// 	if root != nil {
-// 		inorderTraversal(root.Left)
-// 		fmt.Printf("%d ", root.Key)
-// 		inorderTraversal(root.Right)
-// 	}
-// }
+func inorderTraversal(root *Node) {
+	if root != nil {
+		inorderTraversal(root.Left)
+		fmt.Printf("%d ", root.Key)
+		inorderTraversal(root.Right)
+	}
+}
 
 // func postorderTraversal(root *Node) {
 // 	if root != nil {
@@ -153,8 +153,8 @@ func main() {
 		root = insert(root, key)
 	}
 
-	// fmt.Println("In-order traversal:")
-	// inorderTraversal(root)
+	fmt.Println("In-order traversal:")
+	inorderTraversal(root)
 	fmt.Println("\nSearch for 12:")
 	result := search(root, 12)
 	if result != nil {
