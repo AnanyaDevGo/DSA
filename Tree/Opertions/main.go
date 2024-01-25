@@ -69,13 +69,13 @@ func inorderTraversal(root *Node) {
 	}
 }
 
-// func postorderTraversal(root *Node) {
-// 	if root != nil {
-// 		postorderTraversal(root.Left)
-// 		postorderTraversal(root.Right)
-// 		fmt.Printf("%d ", root.Key)
-// 	}
-// }
+func postorderTraversal(root *Node) {
+	if root != nil {
+		postorderTraversal(root.Left)
+		postorderTraversal(root.Right)
+		fmt.Printf("%d ", root.Key)
+	}
+}
 
 // func removeNode(root *Node, key int) *Node {
 // 	if root == nil {
@@ -182,8 +182,8 @@ func main() {
 	fmt.Println("\nPre-order traversal:")
 	preorderTraversal(root)
 
-	// fmt.Println("\nPost-order traversal:")
-	// postorderTraversal(root)
+	fmt.Println("\nPost-order traversal:")
+	postorderTraversal(root)
 
 	// fmt.Println("\nRemoving node with key 15:")
 	// root = removeNode(root, 15)
