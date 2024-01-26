@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	// "math"
+	"math"
 )
 
 type Node struct {
@@ -77,42 +77,42 @@ func postorderTraversal(root *Node) {
 	}
 }
 
-// func removeNode(root *Node, key int) *Node {
-// 	if root == nil {
-// 		return root
-// 	}
+func removeNode(root *Node, key int) *Node {
+	if root == nil {
+		return root
+	}
 
-// 	if key < root.Key {
-// 		root.Left = removeNode(root.Left, key)
-// 	} else if key > root.Key {
-// 		root.Right = removeNode(root.Right, key)
-// 	} else {
-// 		if root.Left == nil {
-// 			return root.Right
-// 		} else if root.Right == nil {
-// 			return root.Left
-// 		}
-// 		root.Key = findMin(root.Right).Key
-// 		root.Right = removeNode(root.Right, root.Key)
-// 	}
+	if key < root.Key {
+		root.Left = removeNode(root.Left, key)
+	} else if key > root.Key {
+		root.Right = removeNode(root.Right, key)
+	} else {
+		if root.Left == nil {
+			return root.Right
+		} else if root.Right == nil {
+			return root.Left
+		}
+		root.Key = findMin(root.Right).Key
+		root.Right = removeNode(root.Right, root.Key)
+	}
 
-// 	return root
-// }
+	return root
+}
 
-// func closest(root *Node, target int) int {
-// 	closestVal := math.Inf(1)
-// 	for root != nil {
-// 		if diff := float64(root.Key - target); math.Abs(diff) < math.Abs(closestVal-float64(target)) {
-// 			closestVal = float64(root.Key)
-// 		}
-// 		if target < root.Key {
-// 			root = root.Left
-// 		} else {
-// 			root = root.Right
-// 		}
-// 	}
-// 	return int(closestVal)
-// }
+func closest(root *Node, target int) int {
+	closestVal := math.Inf(1)
+	for root != nil {
+		if diff := float64(root.Key - target); math.Abs(diff) < math.Abs(closestVal-float64(target)) {
+			closestVal = float64(root.Key)
+		}
+		if target < root.Key {
+			root = root.Left
+		} else {
+			root = root.Right
+		}
+	}
+	return int(closestVal)
+}
 
 // func isValidBinaryTree(root *Node, minVal, maxVal int) bool {
 // 	if root == nil {
@@ -185,12 +185,12 @@ func main() {
 	fmt.Println("\nPost-order traversal:")
 	postorderTraversal(root)
 
-	// fmt.Println("\nRemoving node with key 15:")
-	// root = removeNode(root, 15)
-	// inorderTraversal(root)
+	fmt.Println("\nRemoving node with key 15:")
+	root = removeNode(root, 15)
+	inorderTraversal(root)
 
-	// fmt.Println("\nClosest value to 13:")
-	// fmt.Println(closest(root, 13))
+	fmt.Println("\nClosest value to 13:")
+	fmt.Println(closest(root, 13))
 
 	// fmt.Println("\nIs a valid binary tree?")
 	// fmt.Println(isValidBinaryTree(root, math.MinInt, math.MaxInt))
