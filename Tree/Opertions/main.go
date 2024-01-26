@@ -114,36 +114,36 @@ func closest(root *Node, target int) int {
 	return int(closestVal)
 }
 
-// func isValidBinaryTree(root *Node, minVal, maxVal int) bool {
-// 	if root == nil {
-// 		return true
-// 	}
-// 	if !(minVal < root.Key && root.Key < maxVal) {
-// 		return false
-// 	}
-// 	return isValidBinaryTree(root.Left, minVal, root.Key) && isValidBinaryTree(root.Right, root.Key, maxVal)
-// }
+func isValidBinaryTree(root *Node, minVal, maxVal int) bool {
+	if root == nil {
+		return true
+	}
+	if !(minVal < root.Key && root.Key < maxVal) {
+		return false
+	}
+	return isValidBinaryTree(root.Left, minVal, root.Key) && isValidBinaryTree(root.Right, root.Key, maxVal)
+}
 
-// func bfs(root *Node) {
-// 	if root == nil {
-// 		return
-// 	}
+func bfs(root *Node) {
+	if root == nil {
+		return
+	}
 
-// 	queue := []*Node{root}
-// 	for len(queue) > 0 {
-// 		current := queue[0]
-// 		queue = queue[1:]
+	queue := []*Node{root}
+	for len(queue) > 0 {
+		current := queue[0]
+		queue = queue[1:]
 
-// 		fmt.Printf("%d ", current.Key)
+		fmt.Printf("%d ", current.Key)
 
-// 		if current.Left != nil {
-// 			queue = append(queue, current.Left)
-// 		}
-// 		if current.Right != nil {
-// 			queue = append(queue, current.Right)
-// 		}
-// 	}
-// }
+		if current.Left != nil {
+			queue = append(queue, current.Left)
+		}
+		if current.Right != nil {
+			queue = append(queue, current.Right)
+		}
+	}
+}
 
 func main() {
 	var root *Node
@@ -192,9 +192,9 @@ func main() {
 	fmt.Println("\nClosest value to 13:")
 	fmt.Println(closest(root, 13))
 
-	// fmt.Println("\nIs a valid binary tree?")
-	// fmt.Println(isValidBinaryTree(root, math.MinInt, math.MaxInt))
+	fmt.Println("\nIs a valid binary tree?")
+	fmt.Println(isValidBinaryTree(root, math.MinInt, math.MaxInt))
 
-	// fmt.Println("\nBFS traversal:")
-	// bfs(root)
+	fmt.Println("\nBFS traversal:")
+	bfs(root)
 }
