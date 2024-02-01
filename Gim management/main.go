@@ -24,7 +24,7 @@ func InorderTraversal(node *Node) {
 func main() {
 	root := NewNode(1, "Anu")
 	root.Left = NewNode(2, "Bibi")
-	root.Right = NewNode(3, "Charls")
+	root.Right = NewNode(3, "Charls") 
 	root.Left.Left = NewNode(4, "Devu")
 	root.Left.Right = NewNode(5, "Edwin")
 
