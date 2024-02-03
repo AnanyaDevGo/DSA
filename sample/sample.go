@@ -16,15 +16,13 @@ import "fmt"
 //     return duplicates
 // }
 
-//	func main() {
-//	    arr1 := []int{1, 2, 5, 3, 6, 4}
-//	    arr2 := []int{4, 6, 9, 8, 4, 3}
-//	    result := countDuplicates(arr1, arr2)
-//	    fmt.Println("Number of duplicated elements:", result)
-//	}
-// package main
+	// func main() {
+	//     arr1 := []int{1, 2, 5, 3, 6, 4}
+	//     arr2 := []int{4, 6, 9, 8, 4, 3}
+	//     result := countDuplicates(arr1, arr2)
+	//     fmt.Println("Number of duplicated elements:", result)
+	// }
 
-// import "fmt"
 
 // func reverseString(s string) string {
 // 	runes := []rune(s)
@@ -34,11 +32,11 @@ import "fmt"
 // 	return string(runes)
 // }
 
-//	func main() {
-//		str := "hello"
-//		reversed := reverseString(str)
-//		fmt.Println("Reversed string:", reversed)
-//	}
+// 	func main() {
+// 		str := "hello"
+// 		reversed := reverseString(str)
+// 		fmt.Println("Reversed string:", reversed)
+// 	}
 
 func countVowels(s string) int {
 	count := 0
