@@ -2,19 +2,19 @@ package main
 
 import "fmt"
 
-func countDuplicates(arr1, arr2 []int) int {
-    set := make(map[int]bool)
-    duplicates := 0
-    for _, num := range arr1 {
-        set[num] = true
-    }
-    for _, num := range arr2 {
-        if set[num] {
-            duplicates++
-        }
-    }
-    return duplicates
-}
+// func countDuplicates(arr1, arr2 []int) int {
+//     set := make(map[int]bool)
+//     duplicates := 0
+//     for _, num := range arr1 {
+//         set[num] = true
+//     }
+//     for _, num := range arr2 {
+//         if set[num] {
+//             duplicates++
+//         }
+//     }
+//     return duplicates
+// }
 
 	// func main() {
 	//     arr1 := []int{1, 2, 5, 3, 6, 4}
