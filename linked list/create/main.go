@@ -19,6 +19,8 @@ func main() {
 	list.Appendlist(4)
 	list.Appendlist(5)
 	list.Appendlist(6)
+	list.Appendlist(7)
+	
 	list.Displaylist()
 }
 
