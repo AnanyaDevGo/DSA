@@ -30,7 +30,6 @@ func main() {
 	root.Right = &Node{Data: 3}
 	root.Left.Left = &Node{Data: 4}
 	root.Left.Right = &Node{Data: 5}
-	root.Right.Left = &Node{Data: 6}
 	fmt.Println("In-Order traversal:")
 	inOrderTraversal(root)
 	fmt.Println()
