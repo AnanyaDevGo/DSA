@@ -1,6 +1,6 @@
-// package main
+package main
 
-// import "fmt"
+import "fmt"
 
 // func countDuplicates(arr1, arr2 []int) int {
 //     set := make(map[int]bool)
@@ -39,9 +39,6 @@
 //		reversed := reverseString(str)
 //		fmt.Println("Reversed string:", reversed)
 //	}
-package main
-
-import "fmt"
 
 func countVowels(s string) int {
 	count := 0
