@@ -11,9 +11,9 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func isValidBST(root *TreeNode) bool {
-	return isValidBSTHelper(root, math.MinInt64, math.MaxInt64)
-}
+// func isValidBST(root *TreeNode) bool {
+// 	return isValidBSTHelper(root, math.MinInt64, math.MaxInt64)
+// }
 
 func isValidBSTHelper(node *TreeNode, min, max int) bool {
 	if node == nil {
@@ -28,11 +28,13 @@ func isValidBSTHelper(node *TreeNode, min, max int) bool {
 }
 
 func main() {
-	root := &TreeNode{Val: 2}
-	root.Left = &TreeNode{Val: 1}
-	root.Right = &TreeNode{Val: 3}
+	root := &TreeNode{Val: 5}
+	root.Left = &TreeNode{Val: 2}
+	root.Right = &TreeNode{Val: 6}
+	root.Left.Left = &TreeNode{Val: 1}
+	root.Left.Right = &TreeNode{Val: 3}
 
-	isValid := isValidBST(root)
+	isValid := isValidBSTHelper(root, math.MinInt, math.MaxInt)
 
 	if isValid {
 		fmt.Println("The binary tree is a valid binary search tree.")
